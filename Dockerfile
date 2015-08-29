@@ -1,4 +1,5 @@
 FROM  ubuntu:14.04
+
 RUN apt-get -y update
 RUN apt-get -y install \
 	build-essential \
@@ -15,7 +16,7 @@ RUN svn co -q svn://gcc.gnu.org/svn/gcc/tags/gcc_5_2_0_release src
 
 WORKDIR /work/bld
 RUN ../src/configure \
-	--enable-threads=posix
+	--enable-threads=posix \
 	--enable-shared \
 	--enable-__cxa_atexit \
 	--enable-languages=c,c++,go \
